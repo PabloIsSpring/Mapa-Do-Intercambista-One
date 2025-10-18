@@ -13,9 +13,9 @@ const routes: Routes = [
   { path: 'agencias', component: Agencias},
   { path: 'destinos', component: Destinos},
   { path: 'foruns', component: Foruns},
-  { path: 'tela-cadastro', component: TelaCadastro},
   { path: 'tela-login', component: TelaLogin},
-  { path: 'pacotes/:pais', component: PacoteDetalhe}
+  { path: 'pacotes/:pais', component: PacoteDetalhe},
+  { path: 'tela-cadastro', component: TelaCadastro}
 ];
 
 @NgModule({
