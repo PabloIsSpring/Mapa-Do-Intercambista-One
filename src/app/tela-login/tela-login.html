@@ -1,1 +1,38 @@
-<p>tela-login works!</p>
+<div class="container-fluid vh-100 d-flex p-0">
+  <!-- Lado esquerdo - imagem -->
+  <div class="col-md-6 d-none d-md-block p-0">
+    <img
+      src="images/login.jpg"
+      alt="Imagem de viagem"
+      class="img-fluid h-100 w-100 object-fit-cover"
+    />
+  </div>
+
+  <!-- Lado direito - formulário -->
+  <div class="col-md-6 d-flex align-items-center justify-content-center bg-light">
+    <div class="form-box">
+      <h2 class="text-center mb-4 fw-bold">Entrar</h2>
+
+      <form>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" />
+        </div>
+
+        <div class="mb-4">
+          <label for="senha" class="form-label">Senha:</label>
+          <input type="password" class="form-control" id="senha" />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 fw-semibold">
+          ENTRAR
+        </button>
+      </form>
+
+      <p class="text-center mt-4 small">
+        Não tem conta? 
+        <a routerLink="tela-cadastro" routerLinkActive="active">Cadastre-se</a>
+      </p>
+    </div>
+  </div>
+</div>

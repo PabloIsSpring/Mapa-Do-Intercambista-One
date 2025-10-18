@@ -6,6 +6,7 @@ import { Destinos } from './destinos/destinos';
 import { Foruns } from './foruns/foruns';
 import { TelaCadastro } from './tela-cadastro/tela-cadastro';
 import { TelaLogin } from './tela-login/tela-login';
+import { PacoteDetalhe } from './pacote-detalhe/pacote-detalhe';
 
 const routes: Routes = [
   { path: 'menu-superior', component: MenuSuperior},
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'foruns', component: Foruns},
   { path: 'tela-cadastro', component: TelaCadastro},
   { path: 'tela-login', component: TelaLogin},
-
+  { path: 'pacotes/:pais', component: PacoteDetalhe}
 ];
 
 @NgModule({
