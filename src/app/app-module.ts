@@ -10,6 +10,8 @@ import { Destinos } from './destinos/destinos';
 import { Agencias } from './agencias/agencias';
 import { TelaCadastro } from './tela-cadastro/tela-cadastro';
 import { TelaLogin } from './tela-login/tela-login';
+import { Home } from './home/home';
+import { Rodape } from './rodape/rodape';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TelaLogin } from './tela-login/tela-login';
     Destinos,
     Agencias,
     TelaCadastro,
-    TelaLogin
+    TelaLogin,
+    Home,
+    Rodape
   ],
   imports: [
     BrowserModule,
