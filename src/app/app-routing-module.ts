@@ -10,6 +10,7 @@ import { PacoteDetalhe } from './pacote-detalhe/pacote-detalhe';
 import { Home } from './home/home';
 
 const routes: Routes = [
+  { path: '', redirectTo:'/home', pathMatch: 'full'},
   { path: 'home', component: Home},
   { path: 'menu-superior', component: MenuSuperior},
   { path: 'agencias', component: Agencias},
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'tela-login', component: TelaLogin},
   { path: 'pacotes/:pais', component: PacoteDetalhe},
   { path: 'tela-cadastro', component: TelaCadastro}
+  
 ];
 
 @NgModule({

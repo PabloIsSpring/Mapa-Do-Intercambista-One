@@ -13,6 +13,7 @@ import { TelaLogin } from './tela-login/tela-login';
 import { PacoteDetalhe } from './pacote-detalhe/pacote-detalhe';
 import { Home } from './home/home';
 import { Rodape } from './rodape/rodape';
+import { CardsDestinos } from './cards-destinos/cards-destinos';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { Rodape } from './rodape/rodape';
     TelaLogin,
     PacoteDetalhe,
     Home,
-    Rodape
+    Rodape,
+    CardsDestinos
   ],
   imports: [
     BrowserModule,
