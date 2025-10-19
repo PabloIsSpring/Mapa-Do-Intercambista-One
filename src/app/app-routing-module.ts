@@ -7,8 +7,10 @@ import { Foruns } from './foruns/foruns';
 import { TelaCadastro } from './tela-cadastro/tela-cadastro';
 import { TelaLogin } from './tela-login/tela-login';
 import { PacoteDetalhe } from './pacote-detalhe/pacote-detalhe';
+import { Home } from './home/home';
 
 const routes: Routes = [
+  { path: 'home', component: Home},
   { path: 'menu-superior', component: MenuSuperior},
   { path: 'agencias', component: Agencias},
   { path: 'destinos', component: Destinos},

@@ -1,0 +1,20 @@
+.primeiraTela {
+    background-image: url('/images/Intercambista.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 99.5vh;
+}
+
+.cor-botao{
+    background-color: #1800AD;
+    color: white;
+}
+
+.tamanho-desk-top {
+    height: 99.5dvh;
+}
+
+.fonte-branca {
+    color: white;
+    
+}
