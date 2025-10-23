@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbCollapse, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuSuperior } from './menu-superior/menu-superior';
 import { Foruns } from './foruns/foruns';
 import { Destinos } from './destinos/destinos';
@@ -33,7 +33,8 @@ import { CardsDestinos } from './cards-destinos/cards-destinos';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    NgbCollapse
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

@@ -1,0 +1,25 @@
+.forum-section {
+    padding: 40px 0;
+  }
+  
+  .forum-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .forum-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .forum-card h5 {
+    margin-bottom: 8px;
+  }
+  
+  .forum-card p {
+    color: #555;
+    margin: 0;
+  }
+  
