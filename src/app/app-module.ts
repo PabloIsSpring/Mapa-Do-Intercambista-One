@@ -14,6 +14,7 @@ import { PacoteDetalhe } from './pacote-detalhe/pacote-detalhe';
 import { Home } from './home/home';
 import { Rodape } from './rodape/rodape';
 import { CardsDestinos } from './cards-destinos/cards-destinos';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,6 @@ import { CardsDestinos } from './cards-destinos/cards-destinos';
     Foruns,
     Destinos,
     Agencias,
-    TelaCadastro,
-    TelaLogin,
     PacoteDetalhe,
     Home,
     Rodape,
@@ -34,7 +33,9 @@ import { CardsDestinos } from './cards-destinos/cards-destinos';
     AppRoutingModule,
     NgbModule,
     NgbCarouselModule,
-    NgbCollapse
+    NgbCollapse,
+    FormsModule
+
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

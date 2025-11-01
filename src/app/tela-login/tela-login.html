@@ -9,15 +9,15 @@
         <div class="form-box">
             <h2 class="text-center mb-4 fw-bold">Entrar</h2>
 
-            <form>
+            <form (ngSubmit)="login()" #loginForm="ngForm">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="email" />
+                    <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email" />
                 </div>
 
                 <div class="mb-4">
                     <label for="senha" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" id="senha" />
+                    <input type="password" class="form-control" id="senha" required [(ngModel)]="senha" name="senha" />
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100 fw-semibold">
