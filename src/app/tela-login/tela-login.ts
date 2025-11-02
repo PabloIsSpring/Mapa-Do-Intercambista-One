@@ -19,18 +19,27 @@ export class TelaLogin {
   constructor(private storageService: StorageService, private router: Router) { }
 
   login() {
-    const cliente: Cliente = this.storageService.getSessionStorage('cliente');
+    // Pega a lista de clientes cadastrados
+    const clientes: Cliente[] = this.storageService.getLocalStorage('clientes') || [];
+
+    // Procura o cliente que corresponde ao email e senha
+    const cliente = clientes.find(c => c.email === this.email && c.senha === this.senha);
 
     if (!cliente) {
-      alert('Nenhum usuário encontrado. Faça o cadastro primeiro.');
+      alert('Email ou senha incorretos ou usuário não cadastrado.');
       return;
     }
 
-    if (cliente.email === this.email && cliente.senha === this.senha) {
-      alert(`Bem-vindo, ${cliente.primeiroNome}!`);
-      this.router.navigate(['/home']);
-    } else {
-      alert('Email ou senha incorretos.');
-    }
+    // Login bem-sucedido
+    alert(`Bem-vindo, ${cliente.primeiroNome}!`);
+
+    // Marca que o usuário está logado
+    this.storageService.setLocalStorage('usuarioLogado', true);
+
+    // Salva o cliente logado separadamente para o menu superior
+    this.storageService.setLocalStorage('cliente', cliente);
+
+    // Navega para a home
+    this.router.navigate(['/home']);
   }
 }

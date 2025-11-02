@@ -1,27 +1,39 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Cliente } from '../models/cliente';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
+  private loginStatus = new BehaviorSubject<Cliente | null>(null);
+  loginStatus$ = this.loginStatus.asObservable();
 
-  constructor() { }
-
-  // Métodos para SESSION STORAGE
-  setSessionStorage(key: string, value: any): void {
-    sessionStorage.setItem(key, JSON.stringify(value));
+  constructor() {
+    const clienteLogado = this.getLocalStorage('cliente');
+    if (clienteLogado) {
+      this.loginStatus.next(clienteLogado);
+    }
   }
 
-  getSessionStorage(key: string): any | null {
-    const item = sessionStorage.getItem(key);
+  setLocalStorage(key: string, value: any) {
+    localStorage.setItem(key, JSON.stringify(value));
+
+    if (key === 'cliente') {
+      this.loginStatus.next(value);
+    }
+  }
+
+  getLocalStorage(key: string): any | null {
+    const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : null;
   }
 
-  removeSessionStorage(key: string): void {
-    sessionStorage.removeItem(key);
-  }
+  removeLocalStorage(key: string) {
+    localStorage.removeItem(key);
 
-  clearSessionStorage(): void {
-    sessionStorage.clear();
+    if (key === 'cliente') {
+      this.loginStatus.next(null);
+    }
   }
 }

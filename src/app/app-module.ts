@@ -14,7 +14,7 @@ import { PacoteDetalhe } from './pacote-detalhe/pacote-detalhe';
 import { Home } from './home/home';
 import { Rodape } from './rodape/rodape';
 import { CardsDestinos } from './cards-destinos/cards-destinos';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { FormsModule, NgForm } from '@angular/forms';
     NgbModule,
     NgbCarouselModule,
     NgbCollapse,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   providers: [
