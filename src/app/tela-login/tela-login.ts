@@ -19,10 +19,8 @@ export class TelaLogin {
   constructor(private storageService: StorageService, private router: Router) { }
 
   login() {
-    // Pega a lista de clientes cadastrados
     const clientes: Cliente[] = this.storageService.getLocalStorage('clientes') || [];
 
-    // Procura o cliente que corresponde ao email e senha
     const cliente = clientes.find(c => c.email === this.email && c.senha === this.senha);
 
     if (!cliente) {
@@ -30,16 +28,12 @@ export class TelaLogin {
       return;
     }
 
-    // Login bem-sucedido
     alert(`Bem-vindo, ${cliente.primeiroNome}!`);
 
-    // Marca que o usuário está logado
     this.storageService.setLocalStorage('usuarioLogado', true);
 
-    // Salva o cliente logado separadamente para o menu superior
     this.storageService.setLocalStorage('cliente', cliente);
 
-    // Navega para a home
     this.router.navigate(['/home']);
   }
 }
