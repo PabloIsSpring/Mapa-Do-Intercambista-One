@@ -1,0 +1,31 @@
+<br>
+<div class="container">
+    <div class="row justify-content-around">
+        <div class="col-3">
+            <img [src]="agencia.foto" alt="" class="card-img-top">
+        </div>
+        <div class="col-8">
+            <h3>{{ agencia.nome }}</h3>
+            <app-star-rating></app-star-rating>
+            <br>
+            <p style="font-size: 21px;">{{agencia.descricao}}</p>
+        </div>
+    </div>
+    <br>
+    <h2>Nossos Destinos</h2>
+    <br>
+    <div class="row justify-content-around">
+        @for (a of agencia.destinos; track $index) {
+            <div class="col-md-3">
+            <div class="card">
+                <img [src]="a" class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column align-items-center">
+                    <h5 class="card-title">{{ (a.split('/').pop() ?? '').split('.')[0] | titlecase }}</h5>
+                    <a routerLink="/pacote-detalhe/" class="btn btn-primary">Pacotes</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+<br>

@@ -8,12 +8,14 @@ import { TelaCadastro } from './tela-cadastro/tela-cadastro';
 import { TelaLogin } from './tela-login/tela-login';
 import { PacoteDetalhe } from './pacote-detalhe/pacote-detalhe';
 import { Home } from './home/home';
+import { AgenciaDetalhes } from './agencia-detalhes/agencia-detalhes';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: Home },
   { path: 'menu-superior', component: MenuSuperior },
   { path: 'agencias', component: Agencias },
+  { path: 'agencia-detalhes/:id', component: AgenciaDetalhes},
   { path: 'destinos', component: Destinos },
   { path: 'foruns', component: Foruns },
   { path: 'pacotes/:pais', component: PacoteDetalhe },

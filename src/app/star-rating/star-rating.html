@@ -1,0 +1,8 @@
+@for (star of [].constructor(max); track $index) {
+  <i
+    class="bi"
+    [ngClass]="$index < value ? 'bi-star-fill text-warning' : 'bi-star text-secondary'"
+    (click)="setRating($index + 1)"
+    style="cursor: pointer; font-size: 1.5rem;"
+  ></i>
+}

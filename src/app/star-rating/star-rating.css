@@ -1,0 +1,7 @@
+i {
+  transition: color 0.2s ease;
+}
+
+i:hover {
+  color: orange;
+}

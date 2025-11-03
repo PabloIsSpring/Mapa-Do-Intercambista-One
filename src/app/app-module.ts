@@ -15,6 +15,9 @@ import { Home } from './home/home';
 import { Rodape } from './rodape/rodape';
 import { CardsDestinos } from './cards-destinos/cards-destinos';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { AgenciaDetalhes } from './agencia-detalhes/agencia-detalhes';
+import { ActivatedRoute } from '@angular/router';
+import { StarRating } from './star-rating/star-rating';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
     PacoteDetalhe,
     Home,
     Rodape,
-    CardsDestinos
+    CardsDestinos,
+    AgenciaDetalhes,
+    StarRating
   ],
   imports: [
     BrowserModule,
@@ -35,8 +40,7 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
     NgbCarouselModule,
     NgbCollapse,
     FormsModule,
-    ReactiveFormsModule,
-
+    ReactiveFormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
