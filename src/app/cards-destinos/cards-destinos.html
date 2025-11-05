@@ -1,87 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<div class="container py-5">
+    <div class="row g-4 d-flex flex-wrap align-items-stretch">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-
-    <div class="container py-5">
-        <div class="row g-4 d-flex flex-wrap align-items-stretch">
-            <!-- CARD 1 -->
-            <div class="col-12 col-md-6 col-lg-3 d-flex">
-                <div class="card flex-fill shadow-sm">
-                    <img src="images/alemanha.jpg" class="card-img-top" alt="Alemanha">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Alemanha</h5>
-                        <p class="card-text flex-grow-1">
-                            Fazer um intercâmbio na Alemanha é investir em uma das economias mais fortes e inovadoras do
-                            mundo,
-                            com um sistema educacional de ponta e um vasto leque de oportunidades para estudantes
-                            internacionais.
-                            A reputação de excelência acadêmica e a estrutura robusta do país oferecem uma experiência
-                            transformadora.
-                        </p>
-                        <a routerLink="/noticia-detalhe/1" class="btn btn-primary mt-auto">Ver Pacotes</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="col-12 col-md-6 col-lg-3 d-flex">
-                <div class="card flex-fill shadow-sm">
-                    <img src="images/japao.jpg" class="card-img-top" alt="Japão">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Japão</h5>
-                        <p class="card-text flex-grow-1">
-                            Com uma mistura fascinante de tradição milenar e tecnologia de ponta, o Japão oferece uma
-                            experiência transformadora.
-                            O intercâmbio no “País do Sol Nascente” proporciona uma imersão completa em uma cultura
-                            única e um impulso para o futuro.
-                        </p>
-                        <a routerLink="/noticia-detalhe/2" class="btn btn-primary mt-auto">Ver Pacotes</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="col-12 col-md-6 col-lg-3 d-flex">
-                <div class="card flex-fill shadow-sm">
-                    <img src="images/inglaterra.jpg" class="card-img-top" alt="Inglaterra">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Inglaterra</h5>
-                        <p class="card-text flex-grow-1">
-                            A Inglaterra oferece uma experiência completa, combinando um sistema de ensino de excelência
-                            com imersão cultural.
-                            Ideal para quem busca crescimento pessoal, aperfeiçoamento do inglês e oportunidades
-                            acadêmicas e profissionais.
-                        </p>
-                        <a routerLink="/noticia-detalhe/3" class="btn btn-primary mt-auto">Ver Pacotes</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CARD 4 -->
-            <div class="col-12 col-md-6 col-lg-3 d-flex">
-                <div class="card flex-fill shadow-sm">
-                    <img src="images/portugal.jpg" class="card-img-top" alt="Portugal">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Portugal</h5>
-                        <p class="card-text flex-grow-1">
-                            Fazer intercâmbio em Portugal é aproveitar ensino de qualidade, cultura rica e custo de vida
-                            acessível.
-                            Um destino acolhedor e estratégico para quem busca qualidade de vida e aprendizado na
-                            Europa.
-                        </p>
-                        <a routerLink="/noticia-detalhe/4" class="btn btn-primary mt-auto">Ver Pacotes</a>
-                    </div>
+        @for (destino of destinos; track destino.id) {
+        <div class="col-12 col-md-6 col-lg-3 d-flex">
+            <div class="card flex-fill shadow-sm">
+                <img [src]="destino.imagem" class="card-img-top" [alt]="destino.nome">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ destino.nome }}</h5>
+                    <p class="card-text flex-grow-1">{{ destino.descricao }}</p>
+                    <a [routerLink]="['/pacotes', destino.rota]" class="btn btn-primary mt-auto">
+                        Ver Pacotes
+                    </a>
                 </div>
             </div>
         </div>
+        }
+
     </div>
-
-</body>
-
-</html>
+</div>

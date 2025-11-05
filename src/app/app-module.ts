@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { NgbCarouselModule, NgbCollapse, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbCollapse, NgbModule, NgbNav, NgbNavConfig, NgbNavItem, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuSuperior } from './menu-superior/menu-superior';
 import { Foruns } from './foruns/foruns';
 import { Destinos } from './destinos/destinos';
@@ -18,6 +18,7 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { AgenciaDetalhes } from './agencia-detalhes/agencia-detalhes';
 import { ActivatedRoute } from '@angular/router';
 import { StarRating } from './star-rating/star-rating';
+import { NgClass } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { StarRating } from './star-rating/star-rating';
     NgbCarouselModule,
     NgbCollapse,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

@@ -1,1 +1,28 @@
-<p>pacote-detalhe works!</p>
+<div class="container mt-5" *ngIf="detalhes; else naoEncontrado">
+  
+    <h2 class="fw-bold mb-3">{{ detalhes.titulo }}</h2>
+    <p class="descricao">{{ detalhes.descricao }}</p>
+  
+    <!-- Submenu visual -->
+    <div class="submenu-visual">
+      <button class="submenu-item">Sobre</button>
+      <button class="submenu-item">Agências</button>
+      <button class="submenu-item">Avaliações</button>
+    </div>
+  
+    <ul class="list-group my-4">
+      <li class="list-group-item"><strong>Preço:</strong> {{ detalhes.preco }}</li>
+      <li class="list-group-item"><strong>Duração:</strong> {{ detalhes.duracao }}</li>
+    </ul>
+  
+    <a routerLink="/destinos" class="btn btn-secondary">Voltar</a>
+  
+  </div>
+  
+  <ng-template #naoEncontrado>
+    <div class="container mt-5 text-center">
+      <h4>Pacote não encontrado 😕</h4>
+      <a routerLink="/destinos" class="btn btn-primary mt-3">Voltar aos destinos</a>
+    </div>
+  </ng-template>
+  
