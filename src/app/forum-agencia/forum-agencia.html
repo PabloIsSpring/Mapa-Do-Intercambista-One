@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Avaliações da Agência</h2>
+    <div class="container-fluid">
+        @for(f of forumsAgencias; track $index){
+            @if(f.idAgencia == agenciaId){
+                <div class="row" style="background-color: rgb(237, 237, 237); border-radius: 8px;">
+                    <h4>{{f.titulo}}</h4>
+                    <br>
+                    <h5>{{f.cliente?.primeiroNome}} {{f.cliente?.sobrenome}}</h5>
+                    <br>
+                    <p class="ml-2">{{f.conteudo}}</p>
+                </div>
+                <br>
+            } 
+        }
+    </div>
+</div>

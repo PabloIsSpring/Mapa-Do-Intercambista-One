@@ -19,6 +19,7 @@ import { AgenciaDetalhes } from './agencia-detalhes/agencia-detalhes';
 import { ActivatedRoute } from '@angular/router';
 import { StarRating } from './star-rating/star-rating';
 import { NgClass } from '@angular/common';
+import { ForumAgencia } from './forum-agencia/forum-agencia';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NgClass } from '@angular/common';
     Rodape,
     CardsDestinos,
     AgenciaDetalhes,
-    StarRating
+    StarRating,
+    ForumAgencia
   ],
   imports: [
     BrowserModule,
