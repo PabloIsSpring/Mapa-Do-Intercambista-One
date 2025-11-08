@@ -42,14 +42,8 @@ h2 {
   background-color: #4979e6;
 }
 
-.link-cadastro {
-  color: #1b0fa0;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.link-cadastro:hover {
-  text-decoration: underline;
+.text-muted {
+  color: #6c757d;
 }
 
 img {
@@ -70,11 +64,11 @@ img {
   color: #0056b3;
 }
 
-
 @media (max-width: 768px) {
   .col-md-6:first-child {
     display: none;
   }
+
   .form-box {
     box-shadow: none;
     padding: 30px;

@@ -1,0 +1,33 @@
+<div *ngIf="carregando" class="loading-overlay d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Carregando...</span>
+    </div>
+</div>
+
+<div *ngIf="!carregando" class="container-fluid vh-100 d-flex p-0">
+    <div class="col-md-6 d-none d-md-block p-0">
+        <img src="images/login.jpg" alt="Imagem de viagem" class="img-fluid h-100 w-100 object-fit-cover" />
+    </div>
+
+    <div class="col-md-6 d-flex align-items-center justify-content-center bg-light">
+        <div class="form-box">
+            <h2 class="text-center mb-4 fw-bold">Redefinir Senha</h2>
+
+            <form (ngSubmit)="redefinirSenha()">
+                <div class="mb-3">
+                    <label for="novaSenha" class="form-label">Nova senha:</label>
+                    <input type="password" class="form-control" id="novaSenha" [(ngModel)]="novaSenha" name="novaSenha"
+                        required />
+                </div>
+
+                <div class="mb-4">
+                    <label for="confirmacao" class="form-label">Confirmar senha:</label>
+                    <input type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao"
+                        name="confirmacao" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 fw-semibold">Redefinir</button>
+            </form>
+        </div>
+    </div>
+</div>

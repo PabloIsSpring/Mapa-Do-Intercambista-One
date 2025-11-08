@@ -20,6 +20,8 @@ import { ActivatedRoute } from '@angular/router';
 import { StarRating } from './star-rating/star-rating';
 import { NgClass } from '@angular/common';
 import { ForumAgencia } from './forum-agencia/forum-agencia';
+import { TelaEsqueciSenha } from './tela-esqueci-senha/tela-esqueci-senha';
+import { TelaResetarSenha } from './tela-resetar-senha/tela-resetar-senha';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ForumAgencia } from './forum-agencia/forum-agencia';
     CardsDestinos,
     AgenciaDetalhes,
     StarRating,
-    ForumAgencia
+    ForumAgencia,
+    TelaEsqueciSenha,
+    TelaResetarSenha
   ],
   imports: [
     BrowserModule,

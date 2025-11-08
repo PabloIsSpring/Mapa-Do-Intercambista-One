@@ -9,6 +9,8 @@ import { TelaLogin } from './tela-login/tela-login';
 import { PacoteDetalhe } from './pacote-detalhe/pacote-detalhe';
 import { Home } from './home/home';
 import { AgenciaDetalhes } from './agencia-detalhes/agencia-detalhes';
+import { TelaEsqueciSenha } from './tela-esqueci-senha/tela-esqueci-senha';
+import { TelaResetarSenha } from './tela-resetar-senha/tela-resetar-senha';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'foruns', component: Foruns },
   { path: 'pacotes/:pais', component: PacoteDetalhe },
   { path: 'tela-login', component: TelaLogin },
-  { path: 'tela-cadastro', component: TelaCadastro }
+  { path: 'tela-cadastro', component: TelaCadastro },
+  { path: 'tela-esqueci-senha', component: TelaEsqueciSenha},
+  { path: 'tela-resetar-senha', component: TelaResetarSenha}
 ];
 
 @NgModule({

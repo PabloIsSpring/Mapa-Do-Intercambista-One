@@ -49,4 +49,9 @@ export class TelaLogin {
     this.router.navigate(['/tela-cadastro']);
 
   }
+
+  redirecionarEsqueciSenha(): void {
+    this.router.navigate(['/tela-esqueci-senha']);
+  }
+
 }
