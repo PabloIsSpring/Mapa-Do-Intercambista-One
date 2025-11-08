@@ -1,6 +1,6 @@
 export interface Cliente {
-    primeiroNome?: string;
-    sobrenome?: string;
-    email?: string;
-    senha?: string;
+    primeiroNome: string;
+    sobrenome: string;
+    email: string;
+    senha: string;
 }

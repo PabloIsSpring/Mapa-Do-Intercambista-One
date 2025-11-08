@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { StorageService } from '../services/local-storage-services';
+import { AuthService } from '../services/auth.service'; // novo import
 import { Cliente } from '../models/cliente';
 
 @Component({
@@ -21,31 +21,35 @@ export class TelaCadastro {
   };
 
   confirmarSenha: string = '';
+  loading = false;
 
   constructor(
-    private storageService: StorageService,
+    private authService: AuthService,
     private router: Router
-  ) { }
+  ) {}
 
-  cadastrar() {
+  async cadastrar() {
     if (!this.cliente.email || !this.cliente.senha || this.cliente.senha !== this.confirmarSenha) {
       alert('Por favor, preencha os campos corretamente e confirme a senha.');
       return;
     }
 
-    const clientesExistentes: Cliente[] = this.storageService.getLocalStorage('clientes') || [];
+    this.loading = true;
+    try {
+      const data = await this.authService.signUp(
+        this.cliente.email,
+        this.cliente.senha,
+        this.cliente.primeiroNome,
+        this.cliente.sobrenome
+      );
 
-    const usuarioExistente = clientesExistentes.find(c => c.email === this.cliente.email);
-    if (usuarioExistente) {
-      alert('Já existe um usuário cadastrado com esse email.');
-      return;
+      alert('Cadastro realizado com sucesso! Verifique seu e-mail para confirmar a conta.');
+      this.router.navigate(['/home']);
+    } catch (err: any) {
+      console.error(err);
+      alert('Erro ao cadastrar: ' + err.message);
+    } finally {
+      this.loading = false;
     }
-
-    clientesExistentes.push(this.cliente);
-
-    this.storageService.setLocalStorage('clientes', clientesExistentes);
-
-    alert('Cadastro realizado com sucesso!');
-    this.router.navigate(['/tela-login']);
   }
 }

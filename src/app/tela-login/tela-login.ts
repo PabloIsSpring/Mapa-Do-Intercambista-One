@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StorageService } from '../services/local-storage-services';
-import { Cliente } from '../models/cliente';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-tela-login',
@@ -15,25 +14,39 @@ export class TelaLogin {
 
   email: string = '';
   senha: string = '';
+  loading = false;
 
-  constructor(private storageService: StorageService, private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-  login() {
-    const clientes: Cliente[] = this.storageService.getLocalStorage('clientes') || [];
-
-    const cliente = clientes.find(c => c.email === this.email && c.senha === this.senha);
-
-    if (!cliente) {
-      alert('Email ou senha incorretos ou usuário não cadastrado.');
+  async login() {
+    if (!this.email || !this.senha) {
+      alert('Por favor, preencha email e senha.');
       return;
     }
 
-    alert(`Bem-vindo, ${cliente.primeiroNome}!`);
+    this.loading = true;
+    try {
+      const { user } = await this.authService.signIn(this.email, this.senha);
+      if (!user) {
+        alert('Falha ao autenticar. Verifique suas credenciais.');
+        return;
+      }
 
-    this.storageService.setLocalStorage('usuarioLogado', true);
+      alert(`Bem-vindo, ${user.user_metadata?.['primeiroNome'] || 'usuário'}!`);
+      this.router.navigate(['/home']);
+    } catch (err: any) {
+      console.error(err);
+      alert('Erro ao fazer login: ' + err.message);
+    } finally {
+      this.loading = false;
+    }
+  }
 
-    this.storageService.setLocalStorage('cliente', cliente);
+  redirecionar(): void {
+    this.router.navigate(['/tela-cadastro']);
 
-    this.router.navigate(['/home']);
   }
 }
