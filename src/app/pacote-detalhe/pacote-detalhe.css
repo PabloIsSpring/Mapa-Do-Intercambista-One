@@ -7,7 +7,10 @@
   }
   
   h2 {
-    color: #2e7d32;
+    color: #ffffff;
+    background-color: #555;
+    padding: 2vh;
+    border-radius: 8px;
   }
   
   .descricao {
@@ -71,4 +74,21 @@
   .btn-secondary:hover {
     background-color: #256828;
   }
+
+  .fundo-pais {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  border-radius: 8px;
+  }
+
+i {
+  transition: color 0.2s ease;
+}
+
+i:hover {
+  color: orange;
+}
+
+
   

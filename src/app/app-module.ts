@@ -38,7 +38,8 @@ import { TelaResetarSenha } from './tela-resetar-senha/tela-resetar-senha';
     StarRating,
     ForumAgencia,
     TelaEsqueciSenha,
-    TelaResetarSenha
+    TelaResetarSenha,
+    StarRating
   ],
   imports: [
     BrowserModule,

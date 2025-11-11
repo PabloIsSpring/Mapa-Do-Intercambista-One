@@ -4,4 +4,8 @@ export interface Agencia {
     descricao?: string;
     foto?: string;
     destinos?: string [];
+    pacotes?: string [];
+    avaliacao?: number;
+    qtdAval?: number;
+    preco?: number;
 }
