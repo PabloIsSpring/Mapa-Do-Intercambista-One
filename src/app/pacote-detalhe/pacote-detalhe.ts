@@ -64,7 +64,7 @@ export class PacoteDetalhe implements OnInit {
       imagem: 'images/irlanda.jpg'
     },
     {
-      nome: 'australia',
+      nome: '',
       titulo: 'Intercâmbio na Austrália',
       descricao: 'Fazer intercâmbio na Austrália é uma oportunidade de estudar em um país com alto padrão de ensino, qualidade de vida e clima agradável. O país é acolhedor, multicultural e oferece boas chances de trabalho para estudantes internacionais. O custo de vida fica entre R$ 7.000 e R$ 10.000 por mês, incluindo moradia, alimentação e transporte, e é necessário comprovar cerca de R$ 70.000 para o visto de estudante. As melhores cidades para estudar são Sydney, Melbourne e Brisbane, conhecidas por suas universidades renomadas e estilo de vida dinâmico. As principais dificuldades estão no alto custo e na adaptação ao fuso horário, mas o intercâmbio na Austrália é uma experiência completa que une estudo, cultura e novas oportunidades.',
       preco: 'A partir de R$ 18.000,00',
@@ -72,7 +72,7 @@ export class PacoteDetalhe implements OnInit {
       imagem: 'images/australia.jpg'
     },
     {
-      nome: 'nova-zelandia',
+      nome: '',
       titulo: 'Intercâmbio na Nova Zelândia',
       descricao: 'Fazer intercâmbio na Nova Zelândia é uma experiência incrível para quem busca contato com a natureza, ensino de qualidade e um estilo de vida tranquilo. O país é conhecido pela segurança, hospitalidade e incentivo à educação internacional, com universidades modernas e foco no aprendizado prático. O custo de vida varia entre R$ 6.000 e R$ 9.000 por mês, e é necessário comprovar cerca de R$ 65.000 para o visto de estudante. As melhores cidades para estudar são Auckland, Wellington e Christchurch, que oferecem ótima infraestrutura, belas paisagens e ambiente multicultural. As principais dificuldades envolvem a distância do Brasil e o alto custo das passagens, mas a experiência proporciona independência, amadurecimento e uma vivência internacional inesquecível.',
       preco: 'A partir de R$ 14.800,00',
