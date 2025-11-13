@@ -24,7 +24,7 @@ export class PacoteDetalhe implements OnInit {
     this.detalhes = this.pacotes.find(p => p.nome === this.pais);
 
     for(let i: number = 0; i < this.agencias.length; i++){
-      this.agencias[i].preco = Math.random() * (20000 - 8500) + 4500;
+      this.agencias[i].preco = Math.random() * (30000 - 12000) + 12000;
     }
   }
 
@@ -64,7 +64,7 @@ export class PacoteDetalhe implements OnInit {
       imagem: 'images/irlanda.jpg'
     },
     {
-      nome: '',
+      nome: 'australia',
       titulo: 'Intercâmbio na Austrália',
       descricao: 'Fazer intercâmbio na Austrália é uma oportunidade de estudar em um país com alto padrão de ensino, qualidade de vida e clima agradável. O país é acolhedor, multicultural e oferece boas chances de trabalho para estudantes internacionais. O custo de vida fica entre R$ 7.000 e R$ 10.000 por mês, incluindo moradia, alimentação e transporte, e é necessário comprovar cerca de R$ 70.000 para o visto de estudante. As melhores cidades para estudar são Sydney, Melbourne e Brisbane, conhecidas por suas universidades renomadas e estilo de vida dinâmico. As principais dificuldades estão no alto custo e na adaptação ao fuso horário, mas o intercâmbio na Austrália é uma experiência completa que une estudo, cultura e novas oportunidades.',
       preco: 'A partir de R$ 18.000,00',
@@ -72,7 +72,7 @@ export class PacoteDetalhe implements OnInit {
       imagem: 'images/australia.jpg'
     },
     {
-      nome: '',
+      nome: 'nova-zelandia',
       titulo: 'Intercâmbio na Nova Zelândia',
       descricao: 'Fazer intercâmbio na Nova Zelândia é uma experiência incrível para quem busca contato com a natureza, ensino de qualidade e um estilo de vida tranquilo. O país é conhecido pela segurança, hospitalidade e incentivo à educação internacional, com universidades modernas e foco no aprendizado prático. O custo de vida varia entre R$ 6.000 e R$ 9.000 por mês, e é necessário comprovar cerca de R$ 65.000 para o visto de estudante. As melhores cidades para estudar são Auckland, Wellington e Christchurch, que oferecem ótima infraestrutura, belas paisagens e ambiente multicultural. As principais dificuldades envolvem a distância do Brasil e o alto custo das passagens, mas a experiência proporciona independência, amadurecimento e uma vivência internacional inesquecível.',
       preco: 'A partir de R$ 14.800,00',
@@ -106,7 +106,7 @@ export class PacoteDetalhe implements OnInit {
       imagem: 'images/japao.jpg'
     },
     {
-      nome: 'inglaterra',
+      nome: '',
       titulo: 'Intercâmbio na Inglaterra',
       descricao: 'Fazer intercâmbio na Inglaterra é uma oportunidade de estudo e crescimento em um país com ensino de excelência e ambiente multicultural. As universidades são renomadas e atraem estudantes do mundo todo. O custo de vida fica entre R$ 8.000 e R$ 12.000 por mês, e é necessário comprovar cerca de R$ 80.000 para o visto de estudante. As melhores cidades para estudar são Londres, Manchester e Cambridge, conhecidas pela qualidade acadêmica e cultural. As principais dificuldades envolvem o alto custo e o clima frio, mas a experiência é valiosa e transformadora.',
       preco: 'A partir de R$ 18.900,00',
@@ -130,7 +130,7 @@ export class PacoteDetalhe implements OnInit {
         descricao:'A cultura do Explore Abroad é voltada à inovação e diversidade de experiências internacionais. A agência valoriza o crescimento pessoal e profissional dos estudantes, incentivando o aprendizado por meio de vivências culturais. É conhecida por um ambiente profissional moderno, colaborativo e centrado no cliente, com foco em oferecer soluções educacionais de qualidade.', 
         foto:'images/agencia1.png', 
         destinos: ['images/japao.jpg', 'images/espanha.jpg', 'images/canada.jpg'],
-        pacotes: ['japao', 'espanha', 'canada'],
+        pacotes: ['japao', 'espanha', 'canada', 'estados-unidos', 'australia', 'nova-zelandia'],
         avaliacao: 5,
         qtdAval: 37,
         preco: 0
@@ -141,7 +141,7 @@ export class PacoteDetalhe implements OnInit {
         descricao:'A Journey Hub tem uma cultura dinâmica e acolhedora, com forte ênfase no atendimento personalizado. Preza por proximidade com o cliente e por criar planos de intercâmbio sob medida. A empresa valoriza o espírito jovem e aventureiro, estimulando seus colaboradores e estudantes a buscar novas experiências e ampliar horizontes culturais.', 
         foto:'images/agencia2.png', 
         destinos:['images/canada.jpg', 'images/espanha.jpg', 'images/mexico.jpg'],
-        pacotes: ['canada', 'espanha', 'mexico'],
+        pacotes: ['canada', 'espanha', 'mexico', 'irlanda', 'reino-unido', 'portugal', 'australia'],
         avaliacao: 4,
         qtdAval: 41,
         preco: 0
@@ -152,7 +152,7 @@ export class PacoteDetalhe implements OnInit {
         descricao:'A Gateway Exchange possui uma cultura baseada em inovação, confiança e entusiasmo por viagens. Estimula o desenvolvimento pessoal por meio de experiências internacionais transformadoras. Sua equipe tem perfil empreendedor e comunicativo, sempre buscando soluções criativas para tornar o intercâmbio acessível e inspirador.', 
         foto:'images/agencia3.png', 
         destinos:['images/eua.jpg', 'images/alemanha.jpg', 'images/italia.jpg'],
-        pacotes: ['eua', 'alemanha', 'italia'],
+        pacotes: ['eua', 'alemanha', 'italia', 'nova-zelandia', 'japao'],
         avaliacao: 4,
         qtdAval: 37,
         preco: 0
@@ -163,7 +163,7 @@ export class PacoteDetalhe implements OnInit {
         descricao:'A cultura da Future Exploring é voltada à inovação e diversidade de experiências internacionais. A agência valoriza o crescimento pessoal e profissional dos estudantes, incentivando o aprendizado por meio de vivências culturais. É conhecida por um ambiente profissional moderno, colaborativo e centrado no cliente, com foco em oferecer soluções educacionais de qualidade.', 
         foto:'images/agencia4.jpg', 
         destinos:['images/portugal.jpg', 'images/inglaterra.jpg'],
-        pacotes: ['portugal', 'inglaterra'],
+        pacotes: ['portugal', 'inglaterra, nova-zelandia', 'japao'],
         avaliacao: 5,
         qtdAval: 28,
         preco: 0

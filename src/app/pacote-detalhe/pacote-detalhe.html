@@ -12,10 +12,9 @@
     <button class="submenu-item" (click)="mostrarAvaliacoes()">Avaliações</button>
   </div>
   @if(agencia){
-  <div class="container">
     @for(a of agencias; track $index){
       @if(a.pacotes?.includes(pais)){
-      <div class="row justify-content-around align-items-center ">
+      <div class="row justify-content-around align-items-center p-3 mb-3 borda">
         <div class="col-3">
           <img [src]="a.foto" alt="" class="card-img-top">
         </div>
@@ -27,12 +26,11 @@
           </div>
           <p>Preço: {{ a.preco | currency:'BRL':'symbol':'1.2-2' }}</p>
         </div>
-        <br>
       </div>
-      <br>
+   
       }
+ 
     }
-  </div> 
   <br>
   } @else if (avaliacoes){
 

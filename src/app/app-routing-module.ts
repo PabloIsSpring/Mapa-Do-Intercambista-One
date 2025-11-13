@@ -11,6 +11,7 @@ import { Home } from './home/home';
 import { AgenciaDetalhes } from './agencia-detalhes/agencia-detalhes';
 import { TelaEsqueciSenha } from './tela-esqueci-senha/tela-esqueci-senha';
 import { TelaResetarSenha } from './tela-resetar-senha/tela-resetar-senha';
+import { IntercambistaGrafico } from './intercambista-grafico/intercambista-grafico';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'tela-login', component: TelaLogin },
   { path: 'tela-cadastro', component: TelaCadastro },
   { path: 'tela-esqueci-senha', component: TelaEsqueciSenha},
-  { path: 'tela-resetar-senha', component: TelaResetarSenha}
+  { path: 'tela-resetar-senha', component: TelaResetarSenha},
+  { path: 'intercambista-grafico', component: IntercambistaGrafico}
 ];
 
 @NgModule({

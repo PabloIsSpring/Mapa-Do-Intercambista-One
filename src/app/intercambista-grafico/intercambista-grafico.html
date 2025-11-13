@@ -1,0 +1,83 @@
+<div class="container mt-4">
+  <div class="select">
+    <select [(ngModel)]="paisEscolhido" class="form-select" (change)="mudarPacotes()">
+      <option selected>Escolha o destino . . .</option>
+      <option value="japao">Japão</option>
+      <option value="eua">Estados Unidos</option>
+      <option value="nova-zelandia">Nova Zelandia</option>
+      <option value="canada">Canada</option>
+      <option value="irlanda">Irlanda</option>
+      <option value="espanha">Espanha</option>
+      <option value="alemanha">Alemanha</option>
+      <option value="portugal">Portugal</option>
+    </select>
+  </div>
+
+  <div class="row text-center mb-4 mt-4">
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm h-100 p-3">
+        <h6 class="text-muted">Preço Médio</h6>
+        <h4 class="fw-bold text-primary" >R$ {{ precoMedio | number:'1.2-2' }}</h4>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm h-100 p-3">
+          <h6 class="text-muted">Pais Procurado</h6>
+          <h4 class="fw-bold text-primary" >{{ paisEscolhido}}</h4>
+      </div>
+    </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm h-100 p-3">
+          <h6 class="text-muted">Agência melhor avaliada</h6>
+          <h4 class="fw-bold text-primary" >{{ melhorAgencia?.nome }}</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-6 mb-3">
+      <div class="card p-3 shadow-sm">
+        <h6 class="mb-3">Preço médio por Agência</h6>
+        <canvas baseChart
+            [data]="barChartData"
+            [type]="barChartType"
+            [options]="chartOptions">
+        </canvas>
+      </div>
+    </div>
+    
+    <div class="col-md-6 mb-3">
+      <div class="card p-3 shadow-sm">
+        <h6 class="mb-3">Tendência de preço</h6>
+        <canvas baseChart
+            [data]="lineChartData"
+            [type]="lineChartType"
+            [options]="chartOptions">
+            </canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="card shadow-sm p-3">
+    <h6 class="mb-3">Detalhamento por agência</h6>
+    <table class="table table-striped table-hover align-middle">
+      <thead>
+        <tr>
+          <th>Agência</th>
+          <th>País</th>
+          <th>TipoPrograma</th>
+          <th>Duração</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let agencia of agencias">
+          <td>{{ agencia.nome }}</td>
+          <td>{{ agencia.pais }}</td>
+          <td>{{ agencia.tipoPrograma }}</td>
+          <td>{{ agencia.duracao }}</td>
+          <td>R$ {{ agencia.valor | number:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->

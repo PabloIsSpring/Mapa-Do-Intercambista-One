@@ -22,6 +22,8 @@ import { NgClass } from '@angular/common';
 import { ForumAgencia } from './forum-agencia/forum-agencia';
 import { TelaEsqueciSenha } from './tela-esqueci-senha/tela-esqueci-senha';
 import { TelaResetarSenha } from './tela-resetar-senha/tela-resetar-senha';
+import { NgChartsModule } from 'ng2-charts';
+import { IntercambistaGrafico } from './intercambista-grafico/intercambista-grafico';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { TelaResetarSenha } from './tela-resetar-senha/tela-resetar-senha';
     ForumAgencia,
     TelaEsqueciSenha,
     TelaResetarSenha,
-    StarRating
+    StarRating,
+    IntercambistaGrafico
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { TelaResetarSenha } from './tela-resetar-senha/tela-resetar-senha';
     NgbCollapse,
     FormsModule,
     ReactiveFormsModule,
+    NgChartsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
