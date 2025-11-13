@@ -69,7 +69,7 @@ export class IntercambistaGrafico implements OnInit {
 
   // Gráfico de linhas
   public lineChartData = {
-  labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+  labels: ['nov', 'dez', 'jan', 'fev', 'mar', 'abr'],
   datasets: [
     {
       data: [18000, 20000, 24000, 21000, 19000, 17500], label: 'Tendência',
