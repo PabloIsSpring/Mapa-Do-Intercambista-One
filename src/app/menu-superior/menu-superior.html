@@ -1,15 +1,16 @@
-<header class="main-header cor-padrao">
-  <div class="header-top">
-    @if (!clienteLogado) {
+<div *ngIf="!modoRecuperacao">
+  <header class="main-header cor-padrao">
+    <div class="header-top">
+      @if (!clienteLogado) {
       <button class="login-btn" routerLink="tela-cadastro" routerLinkActive="active">
         Cadastro <i class="bi bi-person-fill"></i>
       </button>
       <button class="login-btn" routerLink="tela-login" routerLinkActive="active">
         Login <i class="bi bi-person-fill"></i>
       </button>
-    }
+      }
 
-    @if (clienteLogado) {
+      @if (clienteLogado) {
       <div class="usuario-dropdown">
         <button class="usuario-logado" (click)="menuAberto = !menuAberto">
           Olá, {{ nomeCliente }} <i class="bi bi-caret-down-fill"></i>
@@ -18,19 +19,21 @@
           <li><button (click)="logout()">Logout</button></li>
         </ul>
       </div>
-    }
-  </div>
+      }
+    </div>
 
-  <div class="header-middle">
-    <a routerLink="home"><img class="logo" src="images/logo.png" alt="Logo Mapa do Intercambista"></a>
-  </div>
+    <div class="header-middle">
+      <a routerLink="home"><img class="logo" src="images/logo.png" alt="Logo Mapa do Intercambista"></a>
+    </div>
 
-  <div class="header-bottom">
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a routerLink="foruns" routerLinkActive="active" class="nav-link">Fóruns</a></li>
-      <li class="nav-item"><a routerLink="destinos" routerLinkActive="active" class="nav-link">Destinos</a></li>
-      <li class="nav-item"><a routerLink="agencias" routerLinkActive="active" class="nav-link">Agências</a></li>
-      <li class="nav-item"><a routerLink="intercambista-grafico" routerLinkActive="active" class="nav-link">Tendências</a></li>
-    </ul>
-  </div>
-</header>
+    <div class="header-bottom">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a routerLink="foruns" routerLinkActive="active" class="nav-link">Fóruns</a></li>
+        <li class="nav-item"><a routerLink="destinos" routerLinkActive="active" class="nav-link">Destinos</a></li>
+        <li class="nav-item"><a routerLink="agencias" routerLinkActive="active" class="nav-link">Agências</a></li>
+        <li class="nav-item"><a routerLink="intercambista-grafico" routerLinkActive="active"
+            class="nav-link">Tendências</a></li>
+      </ul>
+    </div>
+  </header>
+</div>

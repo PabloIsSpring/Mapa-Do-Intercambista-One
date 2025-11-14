@@ -16,15 +16,8 @@
       <form (ngSubmit)="enviarLink()" #senhaForm="ngForm">
         <div class="mb-4">
           <label for="email" class="form-label">Email:</label>
-          <input
-            type="email"
-            id="email"
-            class="form-control"
-            required
-            [(ngModel)]="email"
-            name="email"
-            placeholder="Digite seu email"
-          />
+          <input type="email" id="email" class="form-control" required [(ngModel)]="email" name="email"
+            placeholder="Digite seu email" />
         </div>
 
         <button type="submit" class="btn btn-primary w-100 fw-semibold">

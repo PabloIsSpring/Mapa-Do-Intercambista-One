@@ -36,7 +36,16 @@ export class TelaLogin {
       }
 
       alert(`Bem-vindo, ${user.user_metadata?.['primeiroNome'] || 'usuário'}!`);
-      this.router.navigate(['/home']);
+      this.authService.desativarModoRecuperacao();
+
+      // navega para a home
+      await this.router.navigate(['/home']);
+
+      // força recarregar a página
+      setTimeout(() => {
+        window.location.reload();
+      }, 50);
+
     } catch (err: any) {
       console.error(err);
       alert('Erro ao fazer login: ' + err.message);

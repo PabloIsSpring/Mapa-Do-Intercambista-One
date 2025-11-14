@@ -19,22 +19,13 @@ export class TelaResetarSenha implements OnInit {
   async ngOnInit() {
     this.carregando = true;
 
-    // Aguarda o carregamento inicial da sessão terminar
+    // Aguarda o Supabase processar sessão vindas do link
     while (this.authService.isCarregandoSessao()) {
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise(resolve => setTimeout(resolve, 50));
     }
 
-    // Garante que o usuário seja deslogado antes de exibir a tela
-    try {
-      await this.authService.signOut();
-    } catch (err) {
-      console.error('Erro ao deslogar automaticamente:', err);
-    } finally {
-      this.carregando = false;
-    }
+    this.carregando = false;
   }
-
-
 
   async redefinirSenha() {
     if (this.novaSenha !== this.confirmacao) {
@@ -45,10 +36,12 @@ export class TelaResetarSenha implements OnInit {
     try {
       await this.authService.updatePassword(this.novaSenha);
       alert('Senha redefinida com sucesso! Faça login novamente.');
+      this.authService.desativarModoRecuperacao();
       this.router.navigate(['/tela-login']);
     } catch (err: any) {
       console.error(err);
       alert('Erro ao redefinir senha: ' + err.message);
     }
   }
+
 }

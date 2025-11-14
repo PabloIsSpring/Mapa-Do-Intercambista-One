@@ -12,10 +12,14 @@ export class MenuSuperior implements OnInit {
   nomeCliente: string = '';
   menuAberto: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
-    // Escuta mudanças de login
+    if (this.authService.isModoRecuperacao()) {
+      this.clienteLogado = false;
+      return; // 🔥 nem inicia o listener, nunca vai aparecer usuário
+    }
+
     this.authService.cliente$.subscribe(user => {
       if (user) {
         this.clienteLogado = true;
@@ -25,6 +29,10 @@ export class MenuSuperior implements OnInit {
         this.nomeCliente = '';
       }
     });
+  }
+
+  get modoRecuperacao() {
+    return this.authService.isModoRecuperacao();
   }
 
   async logout() {

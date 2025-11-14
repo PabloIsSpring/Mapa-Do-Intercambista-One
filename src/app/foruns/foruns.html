@@ -1,26 +1,120 @@
-<div class="forum-section mt-5">
-    <h1 class="text-center mb-4 fw-bold">Fórum</h1>
-  
-    <div class="container">
-      <div class="forum-card mb-3 p-4">
-        <h5 class="fw-bold">Intercâmbio na Alemanha</h5>
-        <p>Compartilhe suas experiências sobre estudar e viver na Alemanha. Dicas de universidades, moradia e cultura local!</p>
-      </div>
-  
-      <div class="forum-card mb-3 p-4">
-        <h5 class="fw-bold">Dúvidas sobre o Japão</h5>
-        <p>Tem curiosidade sobre como é o dia a dia no Japão? Tópico dedicado a quem já foi ou pretende ir.</p>
-      </div>
-  
-      <div class="forum-card mb-3 p-4">
-        <h5 class="fw-bold">Inglaterra — Cultura e Estudo</h5>
-        <p>Discussões sobre programas de estudo, sotaques britânicos e como se adaptar ao estilo de vida inglês.</p>
-      </div>
-  
-      <div class="forum-card mb-3 p-4">
-        <h5 class="fw-bold">Portugal — Experiências</h5>
-        <p>Um espaço para trocar ideias sobre estudar em Portugal, reconhecer diplomas e aproveitar o país.</p>
-      </div>
-    </div>
+<div class="forum-container">
+
+  <h1 class="titulo">Fórum — Mapa do Intercambista</h1>
+
+  <!-- ORDENAR -->
+  <div class="ordenacao">
+    <label>Ordenar por:</label>
+    <select [(ngModel)]="ordenarPor">
+      <option value="recentes">Mais recentes</option>
+      <option value="likes">Mais curtidos</option>
+    </select>
   </div>
-  
+
+  <!-- CAIXA DE CRIAR POST -->
+  <div class="card criar-post" *ngIf="usuarioLogado">
+    <input class="titulo-input"
+           [(ngModel)]="novoTitulo"
+           placeholder="Título do post..." />
+
+    <textarea class="texto-input"
+              [(ngModel)]="novoConteudo"
+              placeholder="Escreva seu post..."></textarea>
+
+    <button class="btn-postar" (click)="criarPost()">Postar</button>
+  </div>
+
+  <!-- LISTAGEM DE POSTS -->
+  <div class="card post" *ngFor="let post of postsOrdenados">
+
+    <!-- Editando -->
+    <div *ngIf="post.editando; else exibindoPost">
+      <input class="edit-titulo" [(ngModel)]="post.titulo" />
+      <textarea class="edit-texto" [(ngModel)]="post.conteudo"></textarea>
+      <button (click)="salvarEdicaoPost(post, post.titulo, post.conteudo)">Salvar</button>
+      <button (click)="post.editando = false">Cancelar</button>
+    </div>
+
+    <ng-template #exibindoPost>
+      <h3>{{ post.titulo }}</h3>
+      <p class="autor">Postado por {{ post.autor }}</p>
+      <p>{{ post.conteudo }}</p>
+
+      <div class="acoes">
+        <button (click)="curtirPost(post)">👍 {{ post.likes }}</button>
+
+        <button *ngIf="post.autor === nomeUsuario"
+                (click)="post.editando = true">Editar</button>
+
+        <button *ngIf="post.autor === nomeUsuario"
+                (click)="excluirPost(post.id)">Excluir</button>
+      </div>
+    </ng-template>
+
+    <!-- COMENTÁRIOS -->
+    <div class="comentarios">
+
+      <h4>Comentários</h4>
+
+      <!-- LISTA -->
+      <div class="comentario"
+           *ngFor="let comentario of ordenarComentarios(post.comentarios)">
+
+        <!-- EDITANDO -->
+        <div *ngIf="comentario.editando; else mostrandoComentario">
+          <textarea [(ngModel)]="comentario.texto"></textarea>
+          <button (click)="salvarEdicaoComentario(comentario, comentario.texto)">Salvar</button>
+          <button (click)="comentario.editando=false">Cancelar</button>
+        </div>
+
+        <ng-template #mostrandoComentario>
+
+          <p class="autor">{{ comentario.autor }}</p>
+          <p>{{ comentario.texto }}</p>
+
+          <div class="acoes-comentario">
+            <button (click)="curtirComentario(comentario)">👍 {{ comentario.likes }}</button>
+
+            <button *ngIf="comentario.autor === nomeUsuario"
+                    (click)="comentario.editando = true">Editar</button>
+
+            <button *ngIf="comentario.autor === nomeUsuario"
+                    (click)="excluirComentario(post, comentario)">Excluir</button>
+
+            <button (click)="comentario.responder = !comentario.responder">Responder</button>
+          </div>
+        </ng-template>
+
+        <!-- RESPOSTA -->
+        <div *ngIf="comentario.responder" class="resposta-box">
+          <textarea [(ngModel)]="comentario.novaResposta"
+                    placeholder="Responder..."></textarea>
+          <button (click)="responderComentario(comentario)">
+            Enviar
+          </button>
+        </div>
+
+        <!-- MOSTRAR RESPOSTAS (SEM ANINHAR VISUALMENTE) -->
+        <div class="resposta" *ngFor="let r of ordenarComentarios(comentario.respostas)">
+          <p class="autor">{{ r.autor }}</p>
+          <p>{{ r.texto }}</p>
+          <button (click)="curtirComentario(r)">👍 {{ r.likes }}</button>
+        </div>
+
+      </div>
+
+      <!-- CAIXA COMENTAR -->
+      <textarea class="input-comentario"
+                *ngIf="usuarioLogado"
+                [(ngModel)]="inputsComentario[post.id]"
+                placeholder="Escreva um comentário..."></textarea>
+
+      <button *ngIf="usuarioLogado"
+              class="btn-comentar"
+              (click)="comentar(post)">Comentar</button>
+
+    </div>
+
+  </div>
+
+</div>
