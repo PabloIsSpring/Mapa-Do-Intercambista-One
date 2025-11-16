@@ -9,7 +9,6 @@
   <div class="submenu-visual">
     <button class="submenu-item" (click)="mostrarSobre()">Sobre</button>
     <button class="submenu-item" (click)="mostrarAgencia()">Agências</button>
-    <button class="submenu-item" (click)="mostrarAvaliacoes()">Avaliações</button>
   </div>
   @if(agencia){
     @for(a of agencias; track $index){
@@ -32,16 +31,16 @@
  
     }
   <br>
-  } @else if (avaliacoes){
-
-  } @else {
-  <div class="container">
+  } @else if (sobre){
+    <div class="container">
     <div class="row align-items-center">
       <div class="col-12">
         <p>{{detalhes.descricao}}</p>
       </div>
     </div>
   </div>
+  } @else {
+  
   <br>
   }
   <a routerLink="/destinos" class="btn btn-secondary">Voltar</a>
