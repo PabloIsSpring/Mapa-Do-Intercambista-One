@@ -131,3 +131,150 @@ header {
     margin-left: 5px;
   }
 }
+
+/* header bottom: itens em linha */
+.header-bottom {
+  display: flex;
+  justify-content: center; /* mantém o menu centralizado */
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+/* nav padrão */
+.nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* links */
+.nav-link {
+  color: white;
+  background-color: #568FF9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+.nav-link:hover { background-color: #4a7ce0; }
+.nav-link.active { background-color: #1800AD; }
+
+/* ========== SEARCH ITEM (nav-search-item) ========== */
+.nav-search-item {
+  position: relative;         /* para o dropdown de resultados */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 6px;
+}
+
+/* botão do ícone (mantém aparência de nav item) */
+.search-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.search-toggle:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* campo de busca — inicialmente oculto (visualmente) - aparece quando .expanded */
+.nav-search-item .search-input {
+  width: 0;
+  opacity: 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  transition: width .22s ease, opacity .18s ease, margin .18s;
+  margin-left: 0;
+  font-size: 0.95rem;
+}
+
+/* quando expandido, input tem tamanho fixo (inline) */
+.nav-search-item.expanded .search-input {
+  width: 260px;
+  opacity: 1;
+  margin-left: 6px;
+  background: white;
+  color: #222;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+/* resultados — dropdown alinhado ao canto direito do item da nav */
+.nav-search-item .search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 320px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  z-index: 3000;
+}
+
+/* item do resultado */
+.nav-search-item .search-results li {
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.nav-search-item .search-results li:hover {
+  background: #f5f7ff;
+}
+
+/* tipo e titulo */
+.nav-search-item .tipo {
+  font-size: 12px;
+  color: #2b62ff;
+  font-weight: 700;
+}
+.nav-search-item .titulo {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* mobile: empilha e reduz input */
+@media (max-width: 768px) {
+  .header-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-search-item.expanded .search-input {
+    width: 95vw;
+    max-width: 360px;
+  }
+
+  .nav-search-item .search-results {
+    right: 50%;
+    transform: translateX(50%);
+    width: 90vw;
+    max-width: 420px;
+  }
+}
+
+
