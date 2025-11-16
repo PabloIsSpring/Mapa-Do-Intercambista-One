@@ -1,249 +1,269 @@
-/* ===============================
-   CONTAINER PRINCIPAL
-================================= */
 .forum-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 30px 20px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 .titulo {
   font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 25px;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
 
-/* ===============================
-   ORDENAR
-================================= */
 .ordenacao {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
-.ordenacao select {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* ===============================
-   CRIAR POST
-================================= */
-.criar-post {
-  padding: 20px;
-  border-radius: 12px;
+.criar-post,
+.post {
   background: #fff;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  margin-bottom: 25px;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 18px;
 }
 
 .titulo-input,
-.texto-input {
+.edit-titulo {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
   margin-bottom: 10px;
 }
 
-.texto-input {
+.texto-input,
+.edit-texto,
+textarea {
+  width: 100%;
+  padding: 10px;
   min-height: 80px;
-  resize: none;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  resize: vertical;
+  margin-bottom: 8px;
 }
 
-.btn-postar {
-  background: #4caf50;
-  color: white;
+.btn-postar,
+.btn-comentar,
+.resposta-box button,
+.salvar-edicao {
+  background: #2f80ed;
+  color: #fff;
   border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.btn-postar:hover {
-  background: #449d48;
+.btn-postar:hover,
+.btn-comentar:hover,
+.resposta-box button:hover {
+  background: #1c63c6;
 }
 
-/* ===============================
-   POSTS
-================================= */
-.post {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.post-titulo {
+  margin: 0 0 6px 0;
+  font-size: 20px;
 }
 
 .autor {
-  font-size: 14px;
-  color: #777;
+  color: #666;
+  font-size: 13px;
+  margin: 6px 0 10px 0;
 }
 
-/* AÇÕES DO POST */
-.acoes button {
-  margin-right: 10px;
-  padding: 6px 12px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  background: #eee;
-}
-
-.acoes button:hover {
-  background: #ddd;
-}
-
-/* ===============================
-   MODO DE EDIÇÃO DO POST
-================================= */
-.edit-titulo,
-.edit-texto {
-  width: 100%;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  background: #fafafa;
-}
-
-.edit-texto {
-  min-height: 90px;
-  resize: none;
-}
-
-button.salvar-edicao {
-  background: #4caf50;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-button.cancelar-edicao {
-  background: #ccc;
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-/* ===============================
-   COMENTÁRIOS
-================================= */
-.comentarios {
-  margin-top: 15px;
-}
-
-.comentario {
-  background: #f7f7f7;
-  padding: 12px;
-  border-left: 4px solid #4caf50;
-  border-radius: 8px;
+.post-conteudo {
   margin-bottom: 12px;
 }
 
-/* Ações dos comentários */
+.acoes button,
 .acoes-comentario button {
-  margin-right: 10px;
-  padding: 5px 10px;
-  font-size: 13px;
-  border-radius: 6px;
+  margin-right: 8px;
+  background: #f0f0f0;
   border: none;
-  background: #eee;
+  padding: 6px 10px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
+.acoes button:hover,
 .acoes-comentario button:hover {
-  background: #ddd;
+  background: #e6e6e6;
 }
 
-/* ===============================
-   MODO DE EDIÇÃO DO COMENTÁRIO
-================================= */
-.comentario textarea {
-  width: 100%;
-  min-height: 70px;
-  margin-bottom: 8px;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  resize: none;
+/* botão like ativo (verde claro) */
+.acoes button.ativo,
+.acoes-comentario button.ativo {
+  background: #d6f5d6;
+  font-weight: 700;
+}
+
+/* botão dislike ativo (vermelho claro) */
+.acoes button.ativo-dislike,
+.acoes-comentario button.ativo-dislike {
+  background: #ffd6d6;
+  font-weight: 700;
+}
+
+/* desabilitado visual */
+.acoes button[disabled],
+.acoes-comentario button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* edição */
+.editar-post {
+  padding: 14px;
   background: #fafafa;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.comentario button {
-  padding: 6px 12px;
-  border-radius: 6px;
+.acoes-edicao {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.cancelar-edicao {
+  background: #ccc;
+  color: #111;
   border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-/* ===============================
-   RESPOSTAS
-================================= */
-.resposta-box textarea {
-  width: 100%;
-  min-height: 70px;
-  padding: 10px;
-  resize: none;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-  background: #fff;
+/* comentários */
+.comentarios {
+  margin-top: 14px;
 }
 
-.resposta-box button {
-  margin-top: 8px;
-  background: #2196f3;
-  color: white;
-  padding: 7px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-.resposta-box button:hover {
-  background: #1976d2;
+.comentario {
+  background: #fbfbfb;
+  padding: 12px;
+  border-left: 4px solid #2f80ed;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .resposta {
-  background: #fff;
-  padding: 10px;
-  border-left: 3px solid #2196f3;
-  border-radius: 6px;
-  margin-left: 25px;
+  margin-left: 22px;
   margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  border-left: 3px solid #1976d2;
+  border-radius: 8px;
 }
 
-/* ===============================
-   CAIXA DE COMENTAR
-================================= */
 .input-comentario {
   width: 100%;
   min-height: 70px;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  resize: none;
-  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  margin-top: 8px;
+  resize: vertical;
 }
 
-.btn-comentar {
-  margin-top: 8px;
+@media (max-width: 600px) {
+  .forum-container {
+    padding: 16px;
+  }
+
+  .titulo {
+    font-size: 22px;
+  }
+}
+
+/* Botões gerais */
+.btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+  margin-right: 6px;
+}
+
+/* Botão Salvar */
+.btn-salvar {
   background: #4caf50;
   color: white;
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+}
+.btn-salvar:hover {
+  background: #43a047;
 }
 
-.btn-comentar:hover {
-  background: #449d48;
+/* Botão Cancelar */
+.btn-cancelar {
+  background: #e0e0e0;
+  color: #333;
+}
+.btn-cancelar:hover {
+  background: #d5d5d5;
+}
+
+/* Botão Editar */
+.btn-editar {
+  background: #2196f3;
+  color: white;
+}
+.btn-editar:hover {
+  background: #1976d2;
+}
+
+/* Botão Excluir */
+.btn-excluir {
+  background: #f44336;
+  color: white;
+}
+.btn-excluir:hover {
+  background: #d32f2f;
+}
+
+/* Botão Responder */
+.btn-responder {
+  background: #ffca28;
+  color: #000;
+}
+.btn-responder:hover {
+  background: #ffb300;
+}
+
+/* Like */
+.btn-like {
+  background: #e8f5e9;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.btn-like:hover {
+  background: #d4edda;
+}
+
+/* Dislike */
+.btn-dislike {
+  background: #ffebee;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.btn-dislike:hover {
+  background: #ffcdd2;
 }

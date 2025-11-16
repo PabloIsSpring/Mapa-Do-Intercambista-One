@@ -11,33 +11,55 @@ export class Destinos {
   destinos: DestinoLista[] = [
     {
       nome: 'Canadá',
-      descricao: 'O Canadá é um destino de destaque para intercâmbio, combinando ensino de excelência, segurança e diversidade cultural. Ideal para quem deseja aprender inglês ou francês e viver uma experiência multicultural.',
+      descricao: 'O Canadá é um destino de destaque para intercâmbio, combinando ensino de excelência, segurança e diversidade cultural.',
       rota: 'canada'
     },
     {
       nome: 'Irlanda',
-      descricao: 'Conhecida pela hospitalidade e qualidade de vida, a Irlanda oferece a oportunidade de estudar e trabalhar durante o intercâmbio. O destino ideal para quem busca aprimorar o inglês e vivenciar tradições europeias.',
+      descricao: 'Conhecida pela hospitalidade e qualidade de vida, a Irlanda oferece estudo e trabalho durante o intercâmbio.',
       rota: 'irlanda'
     },
     {
       nome: 'Austrália',
-      descricao: 'Com praias paradisíacas e instituições de ensino reconhecidas, a Austrália é um destino que une estudo, trabalho e lazer em um ambiente acolhedor e multicultural.',
+      descricao: 'Com praias paradisíacas e ensino de qualidade, a Austrália une estudo, trabalho e lazer.',
       rota: 'australia'
     },
     {
       nome: 'Nova Zelândia',
-      descricao: 'A Nova Zelândia encanta pela segurança, natureza exuberante e excelente sistema educacional. Um destino perfeito para quem busca tranquilidade, aprendizado e novas experiências.',
+      descricao: 'Natureza exuberante, segurança e excelente educação fazem da Nova Zelândia um destino único.',
       rota: 'nova-zelandia'
     },
     {
       nome: 'Estados Unidos',
-      descricao: 'Com universidades renomadas e cultura vibrante, os Estados Unidos são o destino ideal para quem deseja se desenvolver academicamente e ampliar suas oportunidades no mercado internacional.',
+      descricao: 'Universidades renomadas e diversidade cultural tornam os EUA perfeitos para desenvolvimento acadêmico.',
       rota: 'estados-unidos'
     },
     {
       nome: 'Reino Unido',
-      descricao: 'O Reino Unido é sinônimo de tradição e excelência acadêmica. Fazer intercâmbio aqui é mergulhar em uma cultura rica, com universidades históricas e aprendizado do inglês em seu berço original.',
+      descricao: 'Tradição, universidades históricas e o inglês britânico fazem do Reino Unido uma escolha excepcional.',
       rota: 'reino-unido'
     }
   ];
+
+  destinosCarousel = [
+    {
+      nome: 'Espanha',
+      descricao: 'Explore a cultura vibrante espanhola, entre festas, gastronomia e história fascinante.',
+      imagem: 'images/espanha.jpg',
+      rota: 'espanha'
+    },
+    {
+      nome: 'Itália',
+      descricao: 'Descubra a arte, gastronomia e paisagens únicas da Itália — um destino inesquecível.',
+      imagem: 'images/italia.jpg',
+      rota: 'italia'
+    },
+    {
+      nome: 'México',
+      descricao: 'Vivencie tradições milenares e uma cultura cheia de cores, sabores e histórias únicas.',
+      imagem: 'images/mexico.jpg',
+      rota: 'mexico'
+    }
+  ];
+
 }

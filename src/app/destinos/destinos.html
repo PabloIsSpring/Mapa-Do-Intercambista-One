@@ -33,45 +33,32 @@
 <br> <br>
 
 <div class="row mb-3 justify-content-center">
-    <div class="col-12 col-md-8 col-lg-6">
+    <div class="col-12">
         <div class="carousel-container">
-            <ngb-carousel>
-                <ng-template ngbSlide>
+            <ngb-carousel *ngIf="destinosCarousel.length > 0">
+                <ng-template ngbSlide *ngFor="let item of destinosCarousel">
                     <div class="picsum-img-wrapper">
-                        <img src="images/espanha.jpg" alt="Espanha" />
+                        <img [src]="item.imagem" [alt]="item.nome" />
                     </div>
-                    <div class="carousel-caption">
-                        <h3>Espanha</h3>
-                        <p>Explore a cultura vibrante espanhola, entre festas, gastronomia e história fascinante.</p>
-                    </div>
-                </ng-template>
-                <ng-template ngbSlide>
-                    <div class="picsum-img-wrapper">
-                        <img src="images/italia.jpg" alt="Itália" />
-                    </div>
-                    <div class="carousel-caption">
-                        <h3>Itália</h3>
-                        <p>Descubra a arte, gastronomia e paisagens únicas que fazem da Itália um destino inesquecível.
-                        </p>
-                    </div>
-                </ng-template>
-                <ng-template ngbSlide>
-                    <div class="picsum-img-wrapper">
-                        <img src="images/mexico.jpg" alt="México" />
-                    </div>
-                    <div class="carousel-caption">
-                        <h3>México</h3>
-                        <p>Vivencie tradições milenares e uma cultura cheia de cores, sabores e histórias únicas.</p>
-                    </div>
-                </ng-template>
 
+                    <div class="carousel-caption">
+                        <h3>{{ item.nome }}</h3>
+                        <p>{{ item.descricao }}</p>
+
+                        <a class="btn btn-success btn-sm mt-2" [routerLink]="['/pacotes', item.rota]">
+                            Ver pacotes
+                        </a>
+                    </div>
+                </ng-template>
             </ngb-carousel>
         </div>
     </div>
 </div>
 
+
+
 <div class="row">
-    <p class="h1">Perguntas Frequentes sobre Intercâmbio</p>
+    <h1 class="text-left mb-4">Perguntas Frequentes sobre Intercâmbio</h1>
     <br><br>
 </div>
 
