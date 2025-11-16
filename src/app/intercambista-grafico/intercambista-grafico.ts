@@ -34,6 +34,29 @@ export class IntercambistaGrafico implements OnInit {
     this.precoMedio = somaPrecos / agenciaComPacote.length;
 
     this.atualizarGraficoBarra()
+    this.atualizarGraficoLinha()
+  }
+
+  atualizarGraficoLinha(): void {
+    let data: number[] = []
+    for(let i: number = 0; i < 7; i++){
+      data[i] = Math.random() * (33000 - 12000) + 12000;
+    }
+
+    this.lineChartData = {
+      labels: ['nov', 'dez', 'jan', 'fev', 'mar', 'abr'],
+      datasets: [
+        {
+          data,
+          label: "Previsao de preço",
+          borderColor: ["#568FF9"],
+          backgroundColor: ["#84a0d4ff"],
+          pointBackgroundColor: ["#7b97caff"],
+          pointBorderColor: ["#071f4dff"],
+          tension: 0.3
+        }
+      ]
+    }
   }
 
   atualizarGraficoBarra(): void {
@@ -88,14 +111,6 @@ export class IntercambistaGrafico implements OnInit {
     responsive: true,
     plugins: { legend: { display: false } }
   };
-
-  // Tabela
-  agencias = [
-    { nome: 'Agência A', pais: 'EUA', tipoPrograma: 'Estudo', duracao: 'Médio', valor: 20000 },
-    { nome: 'Agência B', pais: 'Canadá', tipoPrograma: 'Trabalho', duracao: 'Curto', valor: 22000 },
-    { nome: 'Agência C', pais: 'Irlanda', tipoPrograma: 'Curso', duracao: 'Longo', valor: 18000 },
-    { nome: 'Agência D', pais: 'Austrália', tipoPrograma: 'Trabalho', duracao: 'Curto', valor: 19000 },
-  ];
 
   agenciasJSON: Agencia [] = [
     {
