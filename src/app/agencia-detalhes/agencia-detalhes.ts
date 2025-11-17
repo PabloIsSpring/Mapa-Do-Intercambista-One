@@ -31,7 +31,8 @@ export class AgenciaDetalhes implements OnInit {
       descricao:'A cultura do STB é voltada à inovação e diversidade de experiências internacionais. A agência valoriza o crescimento pessoal e profissional dos estudantes, incentivando o aprendizado por meio de vivências culturais. É conhecida por um ambiente profissional moderno, colaborativo e centrado no cliente, com foco em oferecer soluções educacionais de qualidade.', 
       foto:'images/agencia1.png', 
       destinos: ['images/japao.jpg', 'images/espanha.jpg', 'images/canada.jpg'],
-      pacotes: ['Japão', 'Espanha', 'Canada']
+      pacotes: ['Japão', 'Espanha', 'Canada'],
+      rota: ['japao', 'espanha', 'canada']
     },
     {
       id: 2, 
@@ -39,7 +40,8 @@ export class AgenciaDetalhes implements OnInit {
       descricao:'A IE tem uma cultura dinâmica e acolhedora, com forte ênfase no atendimento personalizado. Preza por proximidade com o cliente e por criar planos de intercâmbio sob medida. A empresa valoriza o espírito jovem e aventureiro, estimulando seus colaboradores e estudantes a buscar novas experiências e ampliar horizontes culturais.', 
       foto:'images/agencia2.png', 
       destinos:['images/canada.jpg', 'images/espanha.jpg', 'images/mexico.jpg'],
-      pacotes: ['Canada', 'Espanha', 'Mexico']
+      pacotes: ['Canada', 'Espanha', 'Mexico'],
+      rota: ['canada', 'espanha', 'mexico']
     },
     {
       id: 3, 
@@ -47,7 +49,8 @@ export class AgenciaDetalhes implements OnInit {
       descricao:'A CI possui uma cultura baseada em inovação, confiança e entusiasmo por viagens. Estimula o desenvolvimento pessoal por meio de experiências internacionais transformadoras. Sua equipe tem perfil empreendedor e comunicativo, sempre buscando soluções criativas para tornar o intercâmbio acessível e inspirador.', 
       foto:'images/agencia3.png', 
       destinos:['images/eua.jpg', 'images/alemanha.jpg', 'images/italia.jpg'],
-      pacotes: ['Eua', 'Alemanha', 'Italia']
+      pacotes: ['Eua', 'Alemanha', 'Italia'],
+      rota: ['estados-unidos', 'alemanha', 'italia']
     },
     {
       id: 4, 
@@ -55,7 +58,8 @@ export class AgenciaDetalhes implements OnInit {
       descricao:'A cultura do STB é voltada à inovação e diversidade de experiências internacionais. A agência valoriza o crescimento pessoal e profissional dos estudantes, incentivando o aprendizado por meio de vivências culturais. É conhecida por um ambiente profissional moderno, colaborativo e centrado no cliente, com foco em oferecer soluções educacionais de qualidade.', 
       foto:'images/agencia4.jpg', 
       destinos:['images/portugal.jpg', 'images/inglaterra.jpg'],
-      pacotes: ['Portugal', 'Inglaterra']
+      pacotes: ['Portugal', 'Inglaterra'],
+      rota: ['portugal', 'inglaterra']
     }
   ]
 }

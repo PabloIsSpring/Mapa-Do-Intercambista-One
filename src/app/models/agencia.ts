@@ -8,4 +8,5 @@ export interface Agencia {
     avaliacao?: number;
     qtdAval?: number;
     preco?: number;
+    rota?: string[];
 }

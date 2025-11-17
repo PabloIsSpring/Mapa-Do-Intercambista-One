@@ -1,0 +1,217 @@
+/* CONTAINER GERAL */
+.forum-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+h2 {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #0066ff;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  border-radius: 10px;
+}
+
+/* ORDENAR */
+.ordenacao {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.ordenacao select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* CARDS */
+.card,
+.post,
+.criar-post {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 18px;
+}
+
+/* INPUTS */
+.titulo-input,
+.texto-input,
+textarea,
+.edit-titulo,
+.edit-texto {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  resize: vertical;
+  margin-bottom: 10px;
+  min-height: 70px;
+}
+
+/* BOTÕES PRINCIPAIS */
+.btn-postar,
+.btn-comentar,
+.salvar-edicao {
+  background: #2f80ed;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-postar:hover,
+.btn-comentar:hover,
+.salvar-edicao:hover {
+  background: #1c63c6;
+}
+
+/* BOTÃO CANCELAR EDIÇÃO */
+.cancelar-edicao {
+  background: #ccc;
+  color: #111;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* TITULO DO POST */
+.post-titulo {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* AUTOR */
+.autor {
+  color: #666;
+  font-size: 13px;
+  margin: 6px 0 10px 0;
+}
+
+/* CONTENT */
+.post-conteudo {
+  margin-bottom: 12px;
+}
+
+/* AÇÕES (like, dislike, editar, excluir) */
+.acoes button,
+.acoes-comentario button {
+  margin-right: 8px;
+  background: #f0f0f0;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.acoes button:hover,
+.acoes-comentario button:hover {
+  background: #e6e6e6;
+}
+
+/* LIKE ATIVO */
+.ativo {
+  background: #d6f5d6 !important;
+  font-weight: 700;
+}
+
+/* DISLIKE ATIVO */
+.ativo-dislike {
+  background: #ffd6d6 !important;
+  font-weight: 700;
+}
+
+/* DESABILITADO */
+.acoes button[disabled],
+.acoes-comentario button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* COMENTÁRIOS */
+.comentarios {
+  margin-top: 14px;
+}
+
+.comentario {
+  background: #fbfbfb;
+  padding: 12px;
+  border-left: 4px solid #2f80ed;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* RESPOSTA */
+.resposta {
+  margin-left: 22px;
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  border-left: 3px solid #1976d2;
+  border-radius: 8px;
+}
+
+/* INPUT DE COMENTÁRIO PRINCIPAL */
+.input-comentario {
+  width: 100%;
+  min-height: 70px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  margin-top: 8px;
+  resize: vertical;
+}
+
+/* RESPOSTA BOX */
+.resposta-box textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+}
+
+.resposta-box button {
+  margin-top: 8px;
+  background: #2f80ed;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .forum-container {
+    padding: 16px;
+  }
+
+  .post-titulo {
+    font-size: 18px;
+  }
+
+  .ordenacao {
+    justify-content: center;
+  }
+}
